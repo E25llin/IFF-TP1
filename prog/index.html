@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="teste.css">
+    <script src="teste.js"></script>
+</head>
+<body>
+    <script>
+var n1 = []
+alert("Digite cinco números")
+for(var i = 0; i < 5; i++){
+n1[i] = parseInt(prompt(`Digite o ${i+1}º número: `))
+while(isNaN(n1[i])){
+var erro = parseInt(prompt("Deu erro! Você só pode digitar números.\nTente novamente: "))
+n1[i]=erro
+}
+}
+alert("Os números digitados foram "+n1+".")
+alert("O número maior foi "+Math.max(...n1))
+   </script>
+   <h1>
+       Olá mundo!
+   </h1>
+</body>
+</html>
