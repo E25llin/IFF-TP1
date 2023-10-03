@@ -8,6 +8,7 @@ app.use(express.urlencoded({extended: true}))
 app.get('/login', function(req, res) {
     res.render('index')
 })
+
 app.post('/paginaHome', function(req, res) {
     console.log(req.body);
    res.render('home', {data: req.body})
