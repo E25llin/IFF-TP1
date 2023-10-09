@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 app.get('/login', function(req, res) {
-    res.render('index')
+    res.render('teste')
 })
 
 app.post('/paginaHome', function(req, res) {
