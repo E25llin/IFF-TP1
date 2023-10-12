@@ -17,9 +17,9 @@ app.get('/soma', (req, res) => {
     if (isNaN(data.result)) {
         data.result = "Valores inválidos."
     } else {
-        data.result = `${req.query.n1} + ${req.query.n2} = ${result}`
+        data.result = `${req.query.n1} + ${req.query.n2} = ${data.result}`
     }
 
-    res.send("lua",{ data })
+    res.render("lua",{ data })
 })
 app.listen(8080)
