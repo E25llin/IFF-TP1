@@ -4,7 +4,7 @@ app.use(express.urlencoded({ extended: true }))
 app.set("view engine","ejs")
 
 app.get('/', (request, response) => {
-    response.render('/soma')
+    response.render('form')
 })
 
 app.get('/soma', (req, res) => {

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Soma</title>
+    <script type="text/javascript" src="soma2.js"></script>
+</head>
+
+<body>
+
+    <h1>Calculador (só faz soma, por enquanto!)</h1>
+    <form>
+        <label>Valor 1: </label>
+        <input placeholder="Digite um inteiro" id="num1">
+        <br>
+        <label>Valor 2: </label>
+        <input placeholder="Digite outro inteiro" id="num2">
+        <br>
+        <button type="button"
+            onclick="soma(document.getElementById('num1').value, document.getElementById('num2').value)">Somar</button>
+        <button type="reset">Limpa</button>
+        <br>
+    </form>
+    <h2 id="resultado"></h2>
+</body>
+
+</html>
