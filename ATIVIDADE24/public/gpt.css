@@ -1,41 +1,72 @@
 body {
     font-family: Inter;
-    background-color: #3DA5BA;;
+    background-color: #3DA5BA;
     color: #000;
 }
 
 h1 {
     color: #000;
+
     font-family: Inter;
     font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-h2 {
-    color: #000;
-    font-family: Inter;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-weight: 200;   
 }
 
 ul a {
-    font-size: 20px;
-    text-decoration: none;
+    background-color: #3DA5BA;
+    font-size: 25px;
+    font-weight: bold; 
+    text-decoration: underline;
     color: #000;
-    font-weight: bold;
 }
 
 p {
     color: #000;
     text-align: justify;
     font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
+    font-size: 25px;
     font-weight: 400;
     line-height: normal;
+}
+
+.titulo {
+    color:#000;
+    font-size: 40px;
+    font-family: Inter;
+    text-align: center;
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.rodape {
+    color:#000;
+    font-size: 20px;
+    font-family: Inter;
+    border: 1px solid #000;
+    display: inline;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0 850px;
+}
+
+.tet {
+    width: 700px;
+    border: 1px solid #000;
+    background-color: #fff;
+    padding: 0 20px;
+    height: 400px;
+    float: left;
+    margin-top: 70px;
+    margin-left: 250px;
+    border-radius: 30px;
+}
+
+img {
+    height: 400px;
+    margin: 70px;
+    border-radius: 30px;
+    width: 600px;
 }
 
