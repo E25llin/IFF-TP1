@@ -29,6 +29,13 @@ app.get("/pont", (riquisicao, resposta ) => {
     resposta.render('pont')
 })
 
+let vetorNomes = []
+if (fs.existsSync('visitas.json')) {
+    const dados = fs.readFileSync('visitas.json', 'utf-8')
+    console.log(dados);
+    vetorNomes = JSON.parse(dados)
+}
+
 app.get('/cad', (request, response) => {
     resultado = ""
     response.render('cad', { resultado })
@@ -43,7 +50,16 @@ app.post('/salvar', (req, res) => {
     let cadastro = {nome: nomeNoForm, telefone: telefoneNoForm, local: localNoForm, dia: diaNoForm}
     fs.appendFileSync('visitas.json', `\n${JSON.stringify(cadastro)}`)
     resultado = `Entraremos em contato para confirmar sua visita, ${nomeNoForm}.`
-    res.render('cad', { resultado })
+    res.render('cad', { resultado });
+
+
+vetorVisitas.push(cadastro)
+    fs.writeFileSync('visitas.json', JSON.stringify(vetorVisitas))
+
+})
+
+app.get('/mostrar', (req, res) => {
+    res.render('nomes', { vetorNomes })
 })
 
 app.listen(8080)
