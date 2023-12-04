@@ -29,11 +29,11 @@ app.get("/pont", (riquisicao, resposta ) => {
     resposta.render('pont')
 })
 
-let vetorNomes = []
+let vetorVisitas = []
 if (fs.existsSync('visitas.json')) {
     const dados = fs.readFileSync('visitas.json', 'utf-8')
-    console.log(dados);
-    vetorNomes = JSON.parse(dados)
+    vetorVisitas.push(JSON.parse(dados))
+    console.log(vetorVisitas);
 }
 
 app.get('/cad', (request, response) => {
@@ -55,11 +55,11 @@ app.post('/salvar', (req, res) => {
 
 vetorVisitas.push(cadastro)
     fs.writeFileSync('visitas.json', JSON.stringify(vetorVisitas))
-
 })
 
 app.get('/mostrar', (req, res) => {
-    res.render('nomes', { vetorNomes })
+    console.log(vetorVisitas);
+    res.render('mostrar', { vetorVisitas })
 })
 
 app.listen(8080)
