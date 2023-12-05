@@ -5,6 +5,8 @@ app.set("view engine", "ejs")
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 
+let vetorVisitas = []
+
 app.get("/", (riquisicao, resposta ) => {
     resposta.render('index')
 })
@@ -29,11 +31,10 @@ app.get("/pont", (riquisicao, resposta ) => {
     resposta.render('pont')
 })
 
-let vetorVisitas = []
 if (fs.existsSync('visitas.json')) {
     const dados = fs.readFileSync('visitas.json', 'utf-8')
-    vetorVisitas.push(JSON.parse(dados))
-    console.log(vetorVisitas);
+    console.log(vetorVisitas)
+    vetorVisitas = JSON.parse(dados)
 }
 
 app.get('/cad', (request, response) => {
@@ -50,11 +51,10 @@ app.post('/salvar', (req, res) => {
     let cadastro = {nome: nomeNoForm, telefone: telefoneNoForm, local: localNoForm, dia: diaNoForm}
     fs.appendFileSync('visitas.json', `\n${JSON.stringify(cadastro)}`)
     resultado = `Entraremos em contato para confirmar sua visita, ${nomeNoForm}.`
+    vetorVisitas.push(cadastro)
+    fs.writeFileSync('visitas.json', JSON.stringify(vetorVisitas))
     res.render('cad', { resultado });
 
-
-vetorVisitas.push(cadastro)
-    fs.writeFileSync('visitas.json', JSON.stringify(vetorVisitas))
 })
 
 app.get('/mostrar', (req, res) => {
